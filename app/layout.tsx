@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { PreviewBanner } from "@/components/layout/PreviewBanner";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { DisableRightClick } from "@/components/layout/DisableRightClick";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
       className={cn(fredoka.variable, inter.variable, "scroll-smooth")}
     >
       <body className="font-body antialiased bg-brand-cream text-brand-text min-h-screen flex flex-col">
+        <DisableRightClick />
         <PreviewBanner />
         <Navbar />
         <main className="flex-1">{children}</main>
