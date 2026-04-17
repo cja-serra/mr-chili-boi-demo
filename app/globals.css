@@ -4,91 +4,125 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* ============================================================
+   MR. CHILI BOI — BRAND THEME VARIABLES
+   Swap all brand colors in this one block.
+   ============================================================ */
+:root {
+  /* Brand palette — hex for direct use */
+  --brand-primary:      #E8581A;
+  --brand-primary-dark: #C94110;
+  --brand-secondary:    #CC0000;
+  --brand-accent:       #F5A623;
+  --brand-dark:         #1A1A1A;
+  --brand-cream:        #FFFDF0;
+  --brand-green:        #2D6A2D;
+  --brand-muted:        #F9F0E6;
+  --brand-border:       #E8D5B7;
+  --brand-text:         #2A1A0A;
+  --brand-text-muted:   #7A5A3A;
+
+  /* Shadows */
+  --shadow-card:       0 2px 8px rgba(26, 26, 26, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(232, 88, 26, 0.18);
+  --shadow-nav:        0 2px 12px rgba(26, 26, 26, 0.10);
+
+  /* Transitions */
+  --transition:      200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ============================================================
+   SHADCN TOKENS — mapped to brand colors (oklch approximations)
+   ============================================================ */
 @layer base {
   .theme {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);
   }
   :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    --background: oklch(0.99 0.01 85);
+    --foreground: oklch(0.18 0.04 45);
+    --card: oklch(0.99 0.01 85);
+    --card-foreground: oklch(0.18 0.04 45);
+    --popover: oklch(0.99 0.01 85);
+    --popover-foreground: oklch(0.18 0.04 45);
+    --primary: oklch(0.60 0.19 38);
+    --primary-foreground: oklch(0.99 0.01 85);
+    --secondary: oklch(0.96 0.03 75);
+    --secondary-foreground: oklch(0.18 0.04 45);
+    --muted: oklch(0.96 0.03 75);
+    --muted-foreground: oklch(0.50 0.06 55);
+    --accent: oklch(0.75 0.16 65);
+    --accent-foreground: oklch(0.18 0.04 45);
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
+    --border: oklch(0.88 0.04 65);
+    --input: oklch(0.88 0.04 65);
+    --ring: oklch(0.60 0.19 38);
+    --chart-1: oklch(0.60 0.19 38);
+    --chart-2: oklch(0.75 0.16 65);
+    --chart-3: oklch(0.45 0.15 32);
+    --chart-4: oklch(0.40 0.12 145);
+    --chart-5: oklch(0.35 0.05 45);
     --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-  }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --sidebar: oklch(0.97 0.02 75);
+    --sidebar-foreground: oklch(0.18 0.04 45);
+    --sidebar-primary: oklch(0.60 0.19 38);
+    --sidebar-primary-foreground: oklch(0.99 0.01 85);
+    --sidebar-accent: oklch(0.96 0.03 75);
+    --sidebar-accent-foreground: oklch(0.18 0.04 45);
+    --sidebar-border: oklch(0.88 0.04 65);
+    --sidebar-ring: oklch(0.60 0.19 38);
   }
   * {
-    @apply border-border outline-ring/50;
+    border-color: oklch(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: oklch(var(--background));
+    color: oklch(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   html {
-    @apply font-sans;
+    scroll-behavior: smooth;
   }
 }
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Product card hover lift */
+  .card-lift {
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-primary) 60%, var(--brand-secondary) 100%);
+  }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--brand-muted); }
+::-webkit-scrollbar-thumb { background: var(--brand-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-primary); }
