@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, User, ShoppingCart, Menu, ChevronDown } from "lucide-react";
 import { MegaMenu } from "./MegaMenu";
 import { MobileDrawer } from "./MobileDrawer";
@@ -31,12 +32,14 @@ export function Navbar() {
           </button>
 
           <Link href="/" className="flex items-center gap-2.5 group">
-            {/* Logo placeholder — drop real logo in /public/logo/ */}
-            <div
-              className="w-9 h-9 rounded-full flex items-center justify-center text-lg font-heading font-bold flex-shrink-0"
-              style={{ background: "var(--brand-primary)", color: "var(--brand-cream)" }}
-            >
-              🌶️
+            <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+              <Image
+                src="/logo/download-1.jpg"
+                alt="Mr. Chili Boi"
+                width={36}
+                height={36}
+                className="object-cover w-full h-full"
+              />
             </div>
             <div className="hidden sm:block">
               <p

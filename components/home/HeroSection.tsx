@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -101,25 +102,17 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
         >
           <div
-            className="w-64 h-64 md:w-80 md:h-80 rounded-full flex flex-col items-center justify-center shadow-2xl"
-            style={{
-              background: "rgba(255,253,240,0.15)",
-              border: "3px solid rgba(255,253,240,0.3)",
-            }}
+            className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl"
+            style={{ border: "3px solid rgba(255,253,240,0.3)" }}
           >
-            <span style={{ fontSize: "6rem", lineHeight: 1 }}>🌶️</span>
-            <p
-              className="font-heading font-bold text-lg mt-3"
-              style={{ color: "var(--brand-cream)" }}
-            >
-              Mr. Chili Boi
-            </p>
-            <p
-              className="font-body text-xs mt-1 opacity-70"
-              style={{ color: "var(--brand-cream)" }}
-            >
-              Drop logo here
-            </p>
+            <Image
+              src="/logo/download-1.jpg"
+              alt="Mr. Chili Boi mascot"
+              width={320}
+              height={320}
+              className="object-cover w-full h-full"
+              priority
+            />
           </div>
         </motion.div>
       </div>
