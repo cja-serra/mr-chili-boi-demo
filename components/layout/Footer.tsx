@@ -138,7 +138,7 @@ export function Footer() {
           <p className="font-body text-xs" style={{ color: "rgba(255,253,240,0.4)" }}>
             Built by{" "}
             <a
-              href="https://serrachat.com"
+              href="https://serra-studio.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-brand-accent underline underline-offset-2"
