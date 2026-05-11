@@ -143,7 +143,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="transition-colors hover:text-brand-accent underline underline-offset-2"
             >
-              Serra Studio
+              Studio-Serra
             </a>
           </p>
         </div>
